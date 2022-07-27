@@ -1,0 +1,37 @@
+ol.proj.proj4.register(proj4);
+ol.proj.get("ESRI:102003").setExtent([-2324108.094897, 301784.034267, -2235481.340350, 351548.969377]);
+var wms_layers = [];
+
+var format_US_tract_2018_0 = new ol.format.GeoJSON();
+var features_US_tract_2018_0 = format_US_tract_2018_0.readFeatures(json_US_tract_2018_0, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'ESRI:102003'});
+var jsonSource_US_tract_2018_0 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_US_tract_2018_0.addFeatures(features_US_tract_2018_0);
+var lyr_US_tract_2018_0 = new ol.layer.Vector({
+                declutter: true,
+                source:jsonSource_US_tract_2018_0, 
+                style: style_US_tract_2018_0,
+                interactive: true,
+    title: 'US_tract_2018<br />\
+    <img src="styles/legend/US_tract_2018_0_0.png" /> 0 - 1807<br />\
+    <img src="styles/legend/US_tract_2018_0_1.png" /> 1807 - 3758<br />\
+    <img src="styles/legend/US_tract_2018_0_2.png" /> 3758 - 5124<br />\
+    <img src="styles/legend/US_tract_2018_0_3.png" /> 5124 - 6316<br />\
+    <img src="styles/legend/US_tract_2018_0_4.png" /> 6316 - 8069<br />\
+    <img src="styles/legend/US_tract_2018_0_5.png" /> 8069 - 9835<br />\
+    <img src="styles/legend/US_tract_2018_0_6.png" /> 9835 - 12218<br />\
+    <img src="styles/legend/US_tract_2018_0_7.png" /> 12218 - 16986<br />\
+    <img src="styles/legend/US_tract_2018_0_8.png" /> 16986 - 29322<br />\
+    <img src="styles/legend/US_tract_2018_0_9.png" /> 29322 - 71843<br />'
+        });
+
+lyr_US_tract_2018_0.setVisible(true);
+var layersList = [lyr_US_tract_2018_0];
+lyr_US_tract_2018_0.set('fieldAliases', {'GISJOIN': 'GISJOIN', 'STATEFP': 'STATEFP', 'COUNTYFP': 'COUNTYFP', 'TRACTCE': 'TRACTCE', 'GEOID': 'GEOID', 'NAME': 'NAME', 'NAMELSAD': 'NAMELSAD', 'MTFCC': 'MTFCC', 'FUNCSTAT': 'FUNCSTAT', 'ALAND': 'ALAND', 'AWATER': 'AWATER', 'INTPTLAT': 'INTPTLAT', 'INTPTLON': 'INTPTLON', 'Shape_Leng': 'Shape_Leng', 'Shape_Area': 'Shape_Area', 'carbon off': 'carbon off', 'solardata_region_name': 'solardata_region_name', 'solardata_state_name': 'solardata_state_name', 'solardata_lat_max': 'solardata_lat_max', 'solardata_lat_min': 'solardata_lat_min', 'solardata_lng_max': 'solardata_lng_max', 'solardata_lng_min': 'solardata_lng_min', 'solardata_lat_avg': 'solardata_lat_avg', 'solardata_lng_avg': 'solardata_lng_avg', 'solardata_yearly_sunlight_kwh_kw_threshold_avg': 'solardata_yearly_sunlight_kwh_kw_threshold_avg', 'solardata_count_qualified': 'solardata_count_qualified', 'solardata_percent_covered': 'solardata_percent_covered', 'solardata_percent_qualified': 'solardata_percent_qualified', 'solardata_number_of_panels_n': 'solardata_number_of_panels_n', 'solardata_number_of_panels_s': 'solardata_number_of_panels_s', 'solardata_number_of_panels_e': 'solardata_number_of_panels_e', 'solardata_number_of_panels_w': 'solardata_number_of_panels_w', 'solardata_number_of_panels_f': 'solardata_number_of_panels_f', 'solardata_number_of_panels_median': 'solardata_number_of_panels_median', 'solardata_number_of_panels_total': 'solardata_number_of_panels_total', 'solardata_kw_median': 'solardata_kw_median', 'solardata_kw_total': 'solardata_kw_total', 'solardata_yearly_sunlight_kwh_n': 'solardata_yearly_sunlight_kwh_n', 'solardata_yearly_sunlight_kwh_s': 'solardata_yearly_sunlight_kwh_s', 'solardata_yearly_sunlight_kwh_e': 'solardata_yearly_sunlight_kwh_e', 'solardata_yearly_sunlight_kwh_w': 'solardata_yearly_sunlight_kwh_w', 'solardata_yearly_sunlight_kwh_f': 'solardata_yearly_sunlight_kwh_f', 'solardata_yearly_sunlight_kwh_median': 'solardata_yearly_sunlight_kwh_median', 'solardata_yearly_sunlight_kwh_total': 'solardata_yearly_sunlight_kwh_total', 'solardata_install_size_kw_buckets_json': 'solardata_install_size_kw_buckets_json', 'solardata_carbon_offset_metric_tons': 'solardata_carbon_offset_metric_tons', 'solardata_existing_installs_count': 'solardata_existing_installs_count', });
+lyr_US_tract_2018_0.set('fieldImages', {'GISJOIN': 'TextEdit', 'STATEFP': 'TextEdit', 'COUNTYFP': 'TextEdit', 'TRACTCE': 'TextEdit', 'GEOID': 'TextEdit', 'NAME': 'TextEdit', 'NAMELSAD': 'TextEdit', 'MTFCC': 'TextEdit', 'FUNCSTAT': 'TextEdit', 'ALAND': 'TextEdit', 'AWATER': 'TextEdit', 'INTPTLAT': 'TextEdit', 'INTPTLON': 'TextEdit', 'Shape_Leng': 'TextEdit', 'Shape_Area': 'TextEdit', 'carbon off': 'Range', 'solardata_region_name': 'TextEdit', 'solardata_state_name': 'TextEdit', 'solardata_lat_max': 'TextEdit', 'solardata_lat_min': 'TextEdit', 'solardata_lng_max': 'TextEdit', 'solardata_lng_min': 'TextEdit', 'solardata_lat_avg': 'TextEdit', 'solardata_lng_avg': 'TextEdit', 'solardata_yearly_sunlight_kwh_kw_threshold_avg': 'TextEdit', 'solardata_count_qualified': 'TextEdit', 'solardata_percent_covered': 'TextEdit', 'solardata_percent_qualified': 'TextEdit', 'solardata_number_of_panels_n': 'TextEdit', 'solardata_number_of_panels_s': 'TextEdit', 'solardata_number_of_panels_e': 'TextEdit', 'solardata_number_of_panels_w': 'TextEdit', 'solardata_number_of_panels_f': 'TextEdit', 'solardata_number_of_panels_median': 'TextEdit', 'solardata_number_of_panels_total': 'TextEdit', 'solardata_kw_median': 'TextEdit', 'solardata_kw_total': 'TextEdit', 'solardata_yearly_sunlight_kwh_n': 'TextEdit', 'solardata_yearly_sunlight_kwh_s': 'TextEdit', 'solardata_yearly_sunlight_kwh_e': 'TextEdit', 'solardata_yearly_sunlight_kwh_w': 'TextEdit', 'solardata_yearly_sunlight_kwh_f': 'TextEdit', 'solardata_yearly_sunlight_kwh_median': 'TextEdit', 'solardata_yearly_sunlight_kwh_total': 'TextEdit', 'solardata_install_size_kw_buckets_json': 'TextEdit', 'solardata_carbon_offset_metric_tons': 'TextEdit', 'solardata_existing_installs_count': 'TextEdit', });
+lyr_US_tract_2018_0.set('fieldLabels', {'GISJOIN': 'no label', 'STATEFP': 'no label', 'COUNTYFP': 'no label', 'TRACTCE': 'no label', 'GEOID': 'no label', 'NAME': 'no label', 'NAMELSAD': 'no label', 'MTFCC': 'no label', 'FUNCSTAT': 'no label', 'ALAND': 'no label', 'AWATER': 'no label', 'INTPTLAT': 'no label', 'INTPTLON': 'no label', 'Shape_Leng': 'no label', 'Shape_Area': 'no label', 'carbon off': 'no label', 'solardata_region_name': 'no label', 'solardata_state_name': 'no label', 'solardata_lat_max': 'no label', 'solardata_lat_min': 'no label', 'solardata_lng_max': 'no label', 'solardata_lng_min': 'no label', 'solardata_lat_avg': 'no label', 'solardata_lng_avg': 'no label', 'solardata_yearly_sunlight_kwh_kw_threshold_avg': 'no label', 'solardata_count_qualified': 'no label', 'solardata_percent_covered': 'no label', 'solardata_percent_qualified': 'no label', 'solardata_number_of_panels_n': 'no label', 'solardata_number_of_panels_s': 'no label', 'solardata_number_of_panels_e': 'no label', 'solardata_number_of_panels_w': 'no label', 'solardata_number_of_panels_f': 'no label', 'solardata_number_of_panels_median': 'no label', 'solardata_number_of_panels_total': 'no label', 'solardata_kw_median': 'no label', 'solardata_kw_total': 'no label', 'solardata_yearly_sunlight_kwh_n': 'no label', 'solardata_yearly_sunlight_kwh_s': 'no label', 'solardata_yearly_sunlight_kwh_e': 'no label', 'solardata_yearly_sunlight_kwh_w': 'no label', 'solardata_yearly_sunlight_kwh_f': 'no label', 'solardata_yearly_sunlight_kwh_median': 'no label', 'solardata_yearly_sunlight_kwh_total': 'no label', 'solardata_install_size_kw_buckets_json': 'no label', 'solardata_carbon_offset_metric_tons': 'no label', 'solardata_existing_installs_count': 'no label', });
+lyr_US_tract_2018_0.on('precompose', function(evt) {
+    evt.context.globalCompositeOperation = 'normal';
+});
